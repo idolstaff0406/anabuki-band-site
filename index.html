@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>穴吹カレッジ学生バンド</title>
+
+    <!-- BootstrapのCSS（デザインの基盤） -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+
+    <!-- 自作のCSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ▼ 共通ヘッダーを読み込むエリア -->
+    <div id="header"></div>
+
+    <!-- ▼ メインコンテンツ -->
+    <div class="container mt-4">
+    <!-- ▼ スライドショー（カルーセル） -->
+    <div id="AnabukiCarousel" class="carousel slide mb-4" data-bs-ride="false"> <!-- 自動再生オフ -->
+
+        <!-- スライドインジケーター（●ボタン） -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#AnabukiCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="スライド 1"></button>
+            <button type="button" data-bs-target="#AnabukiCarousel" data-bs-slide-to="1" aria-label="スライド 2"></button>
+            <button type="button" data-bs-target="#AnabukiCarousel" data-bs-slide-to="2" aria-label="スライド 3"></button>
+        </div>
+
+        <!-- スライド本体 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/slidemain.jpg" class="d-block w-100" alt="バンドの紹介画像">
+            </div>
+            <div class="carousel-item">
+                <img src="images/slide1.jpg" class="d-block w-100" alt="練習風景画像">
+            </div>
+            <div class="carousel-item">
+                <img src="images/slide2.jpg" class="d-block w-100" alt="ライブ画像">
+            </div>
+        </div>
+
+        <!-- 左右のナビゲーションボタン -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#AnabukiCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">前へ</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#AnabukiCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">次へ</span>
+        </button>
+    </div>
+
+        <ol>
+            <li>
+                news<br>
+                <a href="pages/news.html">
+                    <img class="fruits-img responsive-img" src="images/melon.jpg" alt="メロンの画像" width="450">
+                </a>
+            </li>
+        </ol>
+        <a href="#">もっと見る</a>
+    </div>
+
+    <!-- ▼ 共通フッターを読み込むエリア -->
+    <div id="footer"></div>
+
+    <!-- BootstrapのJS（動作のために必要） -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 共通ヘッダー・フッター読み込み用 -->
+    <script src="js/common.js"></script>
+</body>
+</html>
+

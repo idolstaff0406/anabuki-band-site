@@ -1,0 +1,54 @@
+/* style.css - 外部スタイルシート */
+/* class="fruits-img" を持つ画像にだけスタイルを適用 */
+.fruits-img {
+    border: 5px solid #66bb6a;
+    /* 緑色の5ピクセルの枠線をつける */
+
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+    /* 右下方向にぼかしのある影をつける（透明度25％の黒） */
+
+    border-radius: 8px;
+    /* 角を丸くして柔らかい印象に */
+
+    transition: transform 0.3s ease;
+    /* transformプロパティの変化を0.3秒かけてなめらかに動かす */
+}
+
+/* マウスが画像に乗った時のスタイル */
+.fruits-img:hover {
+    transform: scale(1.1);
+    /* 画像を1.1倍に拡大する */
+}
+
+.responsive-img {
+    max-width: 100%;
+    /* 親要素の幅を超えないように調整（レスポンシブ対応） */
+
+    height: auto;
+    /* 縦横比を保ったまま高さを自動調整 */
+
+    border-radius: 8px;
+    /* 角を丸くして見た目を整える（fruits-imgと併用可） */
+}
+
+/* custom-navbar クラスの背景色を変更 */
+.custom-navbar {
+    background-color: #ab1c4b; /* 赤色に変更 */
+}
+
+/* カルーセル左右ボタンの背景色を黒の半透明に変更 */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒 */
+    border-radius: 50%;                  /* 丸くしてもOK（任意） */
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ホバー時に背景を少し濃くする */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
