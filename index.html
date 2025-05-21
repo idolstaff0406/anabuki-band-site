@@ -5,72 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>穴吹カレッジ学生バンド</title>
 
-    <!-- BootstrapのCSS（デザインの基盤） -->
+    <!-- ▼ BootstrapのCSS（レイアウトやデザインのための外部ライブラリ） -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 
-    <!-- 自作のCSS -->
+    <!-- ▼ 自作のCSSファイル -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- ▼ 共通ヘッダーを読み込むエリア -->
+    <!-- ▼ ヘッダー部分（外部ファイルから読み込まれる） -->
     <div id="header"></div>
 
-    <!-- ▼ メインコンテンツ -->
+    <!-- ▼ メインコンテンツのコンテナ -->
     <div class="container mt-4">
-    <!-- ▼ スライドショー（カルーセル） -->
-    <div id="AnabukiCarousel" class="carousel slide mb-4" data-bs-ride="false"> <!-- 自動再生オフ -->
 
-        <!-- スライドインジケーター（●ボタン） -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#AnabukiCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="スライド 1"></button>
-            <button type="button" data-bs-target="#AnabukiCarousel" data-bs-slide-to="1" aria-label="スライド 2"></button>
-            <button type="button" data-bs-target="#AnabukiCarousel" data-bs-slide-to="2" aria-label="スライド 3"></button>
+        <!-- ▼ スライドショー（Bootstrapのカルーセル機能を使う） -->
+        <div id="AnabukiCarousel" class="carousel slide mb-4" data-bs-ride="false">
+            <!-- ▼ インジケーター（下の●ボタン） -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#AnabukiCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="スライド 1"></button>
+                <button type="button" data-bs-target="#AnabukiCarousel" data-bs-slide-to="1" aria-label="スライド 2"></button>
+                <button type="button" data-bs-target="#AnabukiCarousel" data-bs-slide-to="2" aria-label="スライド 3"></button>
+            </div>
+
+            <!-- ▼ スライド本体 -->
+            <div class="carousel-inner">
+                <!-- スライド1枚目 -->
+                <div class="carousel-item active">
+                    <a href="pages/news.html">
+                        <img src="images/slidemain.jpg" class="d-block w-100" alt="バンド紹介画像">
+                    </a>
+                </div>
+                <!-- スライド2枚目 -->
+                <div class="carousel-item">
+                    <img src="images/slide1.jpg" class="d-block w-100" alt="練習風景画像">
+                </div>
+                <!-- スライド3枚目 -->
+                <div class="carousel-item">
+                    <img src="images/slide2.jpg" class="d-block w-100" alt="ライブ画像">
+                </div>
+            </div>
+
+            <!-- ▼ 左右のナビゲーションボタン -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#AnabukiCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">前へ</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#AnabukiCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">次へ</span>
+            </button>
         </div>
 
-        <!-- スライド本体 -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/slidemain.jpg" class="d-block w-100" alt="バンドの紹介画像">
+        <!-- ▼ ニュースセクション（最大6件表示） -->
+        <h2 class="mb-4">最新ニュース</h2>
+
+        <!-- ▼ カード型ニュース一覧（モバイル1列／PC3列） -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- ニュース1件目 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/news1.jpg" class="card-img-top" alt="ライブ画像">
+                    <div class="card-body">
+                        <small class="text-muted">2025年5月20日</small>
+                        <h5 class="card-title mt-1">ライブ開催決定！</h5>
+                        <p class="card-text">6月に高松市内でスペシャルライブを行います。ぜひご来場ください！</p>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="images/slide1.jpg" class="d-block w-100" alt="練習風景画像">
+
+            <!-- ニュース2件目 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/news2.jpg" class="card-img-top" alt="メンバー画像">
+                    <div class="card-body">
+                        <small class="text-muted">2025年5月15日</small>
+                        <h5 class="card-title mt-1">新メンバー加入！</h5>
+                        <p class="card-text">◯◯さんがボーカルとして加入しました！応援よろしくお願いします！</p>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="images/slide2.jpg" class="d-block w-100" alt="ライブ画像">
+
+            <!-- ニュース3件目 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/news3.jpg" class="card-img-top" alt="練習画像">
+                    <div class="card-body">
+                        <small class="text-muted">2025年5月10日</small>
+                        <h5 class="card-title mt-1">練習風景を公開</h5>
+                        <p class="card-text">普段の練習の様子を写真で公開しました！</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- 必要に応じて最大6件まで繰り返す -->
         </div>
 
-        <!-- 左右のナビゲーションボタン -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#AnabukiCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">前へ</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#AnabukiCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">次へ</span>
-        </button>
+        <!-- ▼ 「もっと見る」ボタン -->
+        <div class="mt-4 text-end">
+            <a href="pages/news.html" class="btn btn-outline-primary">もっと見る →</a>
+        </div>
     </div>
 
-        <ol>
-            <li>
-                news<br>
-                <a href="pages/news.html">
-                    <img class="fruits-img responsive-img" src="images/melon.jpg" alt="メロンの画像" width="450">
-                </a>
-            </li>
-        </ol>
-        <a href="#">もっと見る</a>
-    </div>
-
-    <!-- ▼ 共通フッターを読み込むエリア -->
+    <!-- ▼ フッター部分（外部ファイルから読み込まれる） -->
     <div id="footer"></div>
 
-    <!-- BootstrapのJS（動作のために必要） -->
+    <!-- ▼ BootstrapのJS（スライドショーなどの動作に必要） -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- 共通ヘッダー・フッター読み込み用 -->
+    <!-- ▼ 共通ヘッダー・フッターを読み込むJSファイル -->
     <script src="js/common.js"></script>
 </body>
 </html>
-
