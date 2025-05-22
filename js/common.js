@@ -1,18 +1,16 @@
 // js/common.js
 // ページの読み込みが終わったら実行
 document.addEventListener("DOMContentLoaded", function () {
-    // 現在のURLのパスを取得（例: /index.html や /pages/apple.html）
+    // 現在のURLのパスを取得（例: /index.html や /pages/newsblog/news1.html）
     const path = window.location.pathname;
 
-    // トップページ(index.html)の場合とサブページの場合で読み込みパスを変える
-    // index.htmlはルート直下なので "components/"
-    // サブページは " ../components/" とする
-    const isRoot = path === "/" || path.endsWith("/index.html");
+    // パスの深さをカウント（例: /pages/newsblog/news1.html → ["", "pages", "newsblog", "news1.html"] → 3階層）
+    const depth = path.split("/").filter(p => p !== "").length;
 
-    // 読み込み元のベースパスを決定
-    const basePath = isRoot ? "components/" : "../components/";
+    // ルートからcomponentsまで戻るための "../" を depth-1 回繰り返す（ルート直下は ""）
+    const basePath = depth > 1 ? "../".repeat(depth - 1) + "components/" : "components/";
 
-    // ヘッダーのHTMLを読み込み、#headerに挿入する
+    // ヘッダーを読み込む
     fetch(basePath + "header.html")
         .then(response => response.text())
         .then(data => {
@@ -20,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (headerElem) headerElem.innerHTML = data;
         });
 
-    // フッターのHTMLを読み込み、#footerに挿入する
+    // フッターを読み込む
     fetch(basePath + "footer.html")
         .then(response => response.text())
         .then(data => {
