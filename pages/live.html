@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ライブ情報一覧 | 穴吹カレッジ学生バンド</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="container mt-4">
+    <h2 class="mb-4">Live</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="live-list"></div>
+    <div class="mt-4 text-center" id="pagination"></div>
+  </div>
+　<div class="container mt-4 text-end">
+    <a href="../index.html" class="btn btn-outline-secondary">
+      <i class="fas fa-home"></i> ホームへ戻る
+    </a>
+  </div>
+
+  <div id="footer" class="mt-5"></div>
+
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/liveData.js"></script>
+  <script src="../js/loadAllLive.js"></script>
+</body>
+</html>

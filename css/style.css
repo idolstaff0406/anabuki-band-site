@@ -38,3 +38,25 @@ a * {
   text-decoration: none;
   color: inherit;
 }
+
+/* ▼ 特定のリンクだけ下線＋灰色にする */
+.link-underline {
+  text-decoration: underline;
+  color: #6c757d; /* Bootstrapの text-muted と同じグレー */
+}
+/* ヘッダー（ナビバー）を固定表示 */
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030; /* Bootstrapのnavbarより前に */
+  background-color: #ab1c4b; /* 必要に応じて背景色を明示 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 固定ヘッダーの高さ分、bodyに余白を付ける */
+body {
+  padding-top: 56px; /* Bootstrapの標準navbarの高さに合わせる（30pxより多め） */
+}
+

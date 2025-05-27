@@ -1,4 +1,3 @@
-// js/common.js
 // ページの読み込みが終わったら実行
 document.addEventListener("DOMContentLoaded", function () {
     // 現在のURLのパスを取得（例: /index.html や /pages/newsblog/news1.html）
@@ -26,3 +25,4 @@ document.addEventListener("DOMContentLoaded", function () {
             if (footerElem) footerElem.innerHTML = data;
         });
 });
+

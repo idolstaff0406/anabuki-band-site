@@ -1,76 +1,48 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>News</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ニュース一覧 | 穴吹カレッジ学生バンド</title>
 
-    <!-- BootstrapのCSS -->
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome（CDN） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- BootstrapのCSS -->
+  <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css" />
+  <!-- 自作のCSS -->
+  <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- 自作のCSS -->
-    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <!-- ▼ 共通ヘッダーを読み込むエリア -->
-    <div id="header"></div>
+  <!-- ▼ ヘッダー（共通パーツ） -->
+  <div id="header"></div>
 
-    <div class="container mt-4">
-    <h1 class="mb-4">お知らせ一覧</h1>
+  <!-- ▼ メインコンテンツ -->
+  <div class="container mt-4">
+    <h2 class="mb-4">News</h2>
+    <!-- JavaScriptがここにカードを挿入 -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="news-list"></div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-        <!-- 1つ目のニュースカード -->
-        <div class="col">
-        <div class="card h-100">
-            <img src="../images/news1.jpg" class="card-img-top" alt="ライブのお知らせ">
-            <div class="card-body">
-            <small class="text-muted">2025年5月20日</small>
-            <h5 class="card-title mt-1">ライブ開催決定！</h5>
-            <p class="card-text">6月に高松市内でスペシャルライブを行います。ぜひご来場ください！</p>
-            </div>
-        </div>
-        </div>
-
-        <!-- 2つ目 -->
-        <div class="col">
-        <div class="card h-100">
-            <img src="../images/news2.jpg" class="card-img-top" alt="新メンバー加入">
-            <div class="card-body">
-            <small class="text-muted">2025年5月15日</small>
-            <h5 class="card-title mt-1">新メンバーが加わりました！</h5>
-            <p class="card-text">ボーカル担当として◯◯さんが加入しました！応援よろしくお願いします。</p>
-            </div>
-        </div>
-        </div>
-
-        <!-- 3つ目（必要に応じて増やせます） -->
-        <div class="col">
-        <div class="card h-100">
-            <img src="../images/news3.jpg" class="card-img-top" alt="練習風景">
-            <div class="card-body">
-            <small class="text-muted">2025年5月10日</small>
-            <h5 class="card-title mt-1">練習風景を公開</h5>
-            <p class="card-text">普段の練習の様子を写真でお届けします！</p>
-            </div>
-        </div>
-        </div>
+    <!-- ページネーション（中央寄せ） -->
+    <div class="mt-4 text-center">
+      <div id="pagination"></div>
     </div>
+  </div>
 
-    <div class="mt-4">
-        <a href="../index.html" class="btn btn-secondary">← トップに戻る</a>
-    </div>
-    </div>
+  <!-- ホームへ戻るボタン -->
+  <div class="container mt-4 text-end">
+    <a href="../index.html" class="btn btn-outline-secondary">
+      <i class="fas fa-home"></i> ホームへ戻る
+    </a>
+  </div>
+  <!-- ▼ フッター（共通パーツ） -->
+  <div id="footer" class="mt-5"></div>
 
-
-    <!-- ▼ 共通フッターを読み込むエリア -->
-    <div id="footer"></div>
-
-    <!-- BootstrapのJS -->
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- 共通パーツ読み込みJS -->
-    <script src="../js/common.js"></script>
-
+  <!-- ▼ JavaScript -->
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/newsData.js"></script> <!-- ニュースデータ -->
+  <script src="../js/loadAllNews.js"></script> <!-- 全件表示 -->
 </body>
 </html>
