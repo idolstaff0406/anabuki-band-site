@@ -40,8 +40,7 @@ function renderPagination(totalItems, itemsPerPage, currentPage, onPageChange) {
   pagination.innerHTML = ""; // リセット
 
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  if (totalPages <= 1) return; // 1ページのみなら非表示
-
+  
   const ul = document.createElement("ul");
   ul.className = "pagination justify-content-center";
 
