@@ -6,10 +6,15 @@ function getItemsPerPage() {
   return 6;
 }
 
-// YouTubeのサムネイル画像URLを取得する関数
-function getYouTubeThumbnail(url) {
-  const videoId = url.split("v=")[1]?.split("&")[0];
-  return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+// YouTubeのvideoIdをURLから取得する関数
+function extractVideoId(url) {
+  const match = url.match(/[?&]v=([^&]+)/);
+  return match ? match[1] : null;
+}
+
+// YouTubeのサムネイル画像URLを取得する関数（videoIdを元に）
+function getYouTubeThumbnail(videoId) {
+  return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`; // 中サイズ
 }
 
 // 動画カードを描画
@@ -22,7 +27,9 @@ function renderMovieCards(movieArray, containerId, page, itemsPerPage) {
   const items = movieArray.slice(start, end);
 
   items.forEach(item => {
-    const thumbnail = getYouTubeThumbnail(item.youtubeUrl);
+    const videoId = extractVideoId(item.youtubeUrl);
+    const thumbnail = getYouTubeThumbnail(videoId);
+
     const col = document.createElement("div");
     col.className = "col";
     col.innerHTML = `
@@ -47,7 +54,6 @@ function renderPagination(totalItems, itemsPerPage, currentPage, onPageChange) {
   pagination.innerHTML = "";
 
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  if (totalPages <= 1) return;
 
   const ul = document.createElement("ul");
   ul.className = "pagination justify-content-center";
