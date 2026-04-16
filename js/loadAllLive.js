@@ -38,7 +38,6 @@ function renderPagination(totalItems, itemsPerPage, currentPage, onPageChange) {
   pagination.innerHTML = "";
 
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  if (totalPages <= 1) return;
 
   const ul = document.createElement("ul");
   ul.className = "pagination justify-content-center";
